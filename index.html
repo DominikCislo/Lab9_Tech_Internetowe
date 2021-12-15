@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lab-9</title>
+		
+		<style>
+			html,body{
+				height:100%;
+				width:100%;
+				margin:0px;
+				overflow:auto;
+			}
+			
+			tr,td,th{
+				border:1px solid black;
+				margin:5px;
+				padding:5px;
+				text-align:left;
+				font-size: 24px;
+				background-color:##DDEECC;
+				transition-property: background,border;
+				transition-duration: 1s;
+				
+			}
+			
+			#head{
+				height: 20%;
+				width: 100%;
+				background-color:#66AA33;
+				color:#D3FFCE;
+				text-align:center;
+				overflow:hidden;
+			}
+			#mid{
+				height: 80%;
+				width: 100%;
+				background-color:#DDEEDD;
+				float:left;
+				display: inline-block;
+				overflow:auto;
+			}
+			
+			}
+			
+
+			h1{
+				margin:0px;
+				font-size:46px;
+				overflow:hidden;
+			}
+			
+			
+			table{
+				
+				margin:10px;
+				border: 2px double black;
+			}
+			
+		
+			
+			button{
+				width:100px;
+				height:33px;
+				margin:3px;
+				
+				
+			}
+			
+			p{
+				margin:5px;
+				padding:5px;
+				font-size:20;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<h1>Witaj świecie</h1>
+		
+			<label for="tab1">Tablica1</label>
+			<input id="tab1" type="text">
+			<label for="tab2">Tablica1</label>
+			<input id="tab2" type="text">
+			<button onClick="compare()">Porównaj</button><br>
+			<label id="wynik"></label>
+		
+	
+		<script>
+			function compare(){
+				var text1 = document.getElementById("tab1");
+				var text2 = document.getElementById("tab2");
+				var wynik = document.getElementById("wynik");
+				console.log(text1.value);
+				console.log(text2.value);
+				tab1=text1.value.split(",");
+				tab2=text2.value.split(",");
+				
+				for(var i=0;i<tab1.length;i++){
+					for(var j=0;j<tab2.length;j++){
+						if(tab1[i]===tab2[j]){
+							tab1.splice(i,1);
+							i--;
+						}
+					}
+				}
+				wynik.innerHTML=tab1;
+			}
+			
+        </script>	
+	</body>
+</html>
